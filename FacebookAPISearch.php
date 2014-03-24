@@ -7,7 +7,7 @@
 * @package  SocialAPISearch
 * @author Nicolai Pefaur at PluralAndPartners <nicolai@zunboy.com>
 * @license Apache V2 License
-* @link http://github.com/SocialAPISearch
+* @link https://github.com/Pluralandpartners/SocialAPISearch/
 * @API Rate Limiting https://dev.twitter.com/docs/rate-limiting/1.1
 */
 
