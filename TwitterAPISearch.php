@@ -45,11 +45,11 @@ class TwitterAPISearch
 	public function getFeeds()
 	{
 		if (!isset($this->feeds))
-        {
-            throw new Exception('Empty feeds');
-        }
+        	{
+            		throw new Exception('Empty feeds');
+        	}
         
-    $url = 'https://api.twitter.com/1.1/search/tweets.json';
+		$url = 'https://api.twitter.com/1.1/search/tweets.json';
 		$requestMethod = 'GET';
 		$getfield = '?since_id='.$this->since_id.'&q='.$this->hashtag.'&count=100&include_entities=1';
 		
