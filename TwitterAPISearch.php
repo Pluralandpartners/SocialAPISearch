@@ -1,5 +1,5 @@
 <?
-
+//Require TwitterAPIExchange Class
 require_once('TwitterAPIExchange.php');
 
 /**
