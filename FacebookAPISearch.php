@@ -42,11 +42,11 @@ class FacebookAPISearch
 	public function getFeeds()
 	{
 		if (!isset($this->feeds))
-        {
-            throw new Exception('Empty feeds');
-        }
+        	{
+            		throw new Exception('Empty feeds');
+		 }
         
-        $url = 'https://graph.facebook.com/search';
+		$url = 'https://graph.facebook.com/search';
 		$getfield = $url.'?q='.$this->hashtag.'&type=post&access_token='.$this->access_token.'&limit=100&since='.$this->since_id;
 	
 		do{
@@ -69,11 +69,11 @@ class FacebookAPISearch
 				if($this->postValidate($data, $i))
 				{
 					$this->feeds['created_at'][] 		= 	$this->setDateTime($data_fb[$i]{'created_time'});
-					$this->feeds['user'][] 				= 	$data[$i]{'from'}{'name'};
-					$this->feeds['uid'][] 				= 	$data[$i]{'from'}{'id'};
-					$this->feeds['profile_image_url'][] = 	'http://graph.facebook.com/'.$data[$i]{'from'}{'id'}.'/picture?width=48&height=48';
-					$this->feeds['text'][] 				= 	$data[$i]{'message'};
-					$this->feeds['since_id'][] 			= 	strtotime($this->setDateTime($data[$i]{'created_time'}));
+					$this->feeds['user'][] 			= 	$data[$i]{'from'}{'name'};
+					$this->feeds['uid'][] 			= 	$data[$i]{'from'}{'id'};
+					$this->feeds['profile_image_url'][] 	= 	'http://graph.facebook.com/'.$data[$i]{'from'}{'id'}.'/picture?width=48&height=48';
+					$this->feeds['text'][] 			= 	$data[$i]{'message'};
+					$this->feeds['since_id'][] 		= 	strtotime($this->setDateTime($data[$i]{'created_time'}));
 				}
 			}
 		
@@ -110,4 +110,5 @@ class FacebookAPISearch
 	}
 
 }
+
 ?>
